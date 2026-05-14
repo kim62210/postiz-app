@@ -184,7 +184,13 @@ export class NaverBlogProvider extends SocialAbstract implements SocialProvider 
     const resp = await bridgeFetch<{
       provider: string;
       categories: { name: string; id: number }[];
-    }>(creds, '/naver/list-categories', { method: 'GET' });
+    }>(creds, '/naver/list-categories', {
+      method: 'GET',
+      headers: {
+        'X-Naver-Username': creds.username,
+        'X-Naver-Password': creds.password,
+      },
+    });
 
     if (!resp.ok) {
       throw new Error(resp.message || 'Failed to fetch categories');
@@ -220,6 +226,8 @@ export class NaverBlogProvider extends SocialAbstract implements SocialProvider 
         visibility: settings.visibility || 'public',
         category: settings.categoryId,
         tags: settings.tags || '',
+        username: creds.username,
+        password: creds.password,
       }),
     });
 
