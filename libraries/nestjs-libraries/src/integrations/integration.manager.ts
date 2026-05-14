@@ -27,6 +27,7 @@ import { TelegramProvider } from '@gitroom/nestjs-libraries/integrations/social/
 import { NostrProvider } from '@gitroom/nestjs-libraries/integrations/social/nostr.provider';
 import { VkProvider } from '@gitroom/nestjs-libraries/integrations/social/vk.provider';
 import { WordpressProvider } from '@gitroom/nestjs-libraries/integrations/social/wordpress.provider';
+import { NaverBlogProvider } from '@gitroom/nestjs-libraries/integrations/social/naver-blog.provider';
 import { ListmonkProvider } from '@gitroom/nestjs-libraries/integrations/social/listmonk.provider';
 import { GmbProvider } from '@gitroom/nestjs-libraries/integrations/social/gmb.provider';
 import { KickProvider } from '@gitroom/nestjs-libraries/integrations/social/kick.provider';
@@ -66,6 +67,7 @@ export const socialIntegrationList: Array<SocialAbstract & SocialProvider> = [
   new DevToProvider(),
   new HashnodeProvider(),
   new WordpressProvider(),
+  new NaverBlogProvider(),
   new ListmonkProvider(),
   new MoltbookProvider(),
   new WhopProvider(),
