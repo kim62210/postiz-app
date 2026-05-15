@@ -714,7 +714,7 @@ export const AddProviderComponent: FC<{
                     'text-center'
                   )}
                 >
-                  {t(`provider_display_${(item.identifier || '').replaceAll('-', '_')}`, item.name)}
+                  {t(`provider_display_${(item.identifier || '').replace(/-/g, '_')}`, item.name)}
                   {!!item.toolTip && !isMobile && (
                     <svg
                       width="15"
