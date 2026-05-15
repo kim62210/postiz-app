@@ -227,7 +227,7 @@ export const ImportDebugPostModal: FC<{ close: () => void }> = ({ close }) => {
                       alt={String(t(`provider_display_${(integration.identifier || '').replace(/-/g, '_')}`, integration.name))}
                     />
                     <div className="text-[13px] text-textColor">
-                      {t(`provider_display_${(integration.identifier || '').replace(/-/g, '_')}`, integration.name)}
+                      {String(t(`provider_display_${(integration.identifier || '').replace(/-/g, '_')}`, integration.name))}
                     </div>
                     <img
                       src={`/icons/platforms/${integration.identifier}.png`}
