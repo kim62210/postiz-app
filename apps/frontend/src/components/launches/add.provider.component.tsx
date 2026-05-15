@@ -385,7 +385,6 @@ export const AddProviderComponent: FC<{
 }> = (props) => {
   const { update, social, article, onboarding, isMobile } = props;
   const { isGeneral, extensionId } = useVariables();
-  const t = useT();
   const toaster = useToaster();
   const router = useRouter();
   const fetch = useFetch();
