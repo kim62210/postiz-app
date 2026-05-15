@@ -973,5 +973,9 @@
   "refresh_channel": "채널 새로고침",
   "search_media_by_name": "파일 이름으로 검색",
   "no_media_match_search": "검색 결과와 일치하는 미디어가 없습니다",
-  "select_or_upload_pictures_max_1gb": "이미지를 선택하거나 업로드하세요 (업로드당 최대 1GB)."
+  "select_or_upload_pictures_max_1gb": "이미지를 선택하거나 업로드하세요 (업로드당 최대 1GB).",
+  "third_party_title_heygen": "HeyGen",
+  "third_party_desc_heygen": "HeyGen은 AI로 생성한 아바타 동영상을 만드는 플랫폼입니다.",
+  "third_party_title_reelfarm": "Reel.Farm",
+  "third_party_desc_reelfarm": "Reel.Farm 계정의 UGC 및 그린스크린 동영상을 가져옵니다."
 }

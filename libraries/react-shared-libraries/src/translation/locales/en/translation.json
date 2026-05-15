@@ -973,5 +973,9 @@
   "refresh_channel": "Refresh Channel",
   "search_media_by_name": "Search by file name",
   "no_media_match_search": "No media matches your search",
-  "select_or_upload_pictures_max_1gb": "Select or upload pictures (maximum 1 GB per upload)."
+  "select_or_upload_pictures_max_1gb": "Select or upload pictures (maximum 1 GB per upload).",
+  "third_party_title_heygen": "HeyGen",
+  "third_party_desc_heygen": "HeyGen is a platform for creating AI-generated avatars videos.",
+  "third_party_title_reelfarm": "Reel.Farm",
+  "third_party_desc_reelfarm": "Import UGC and greenscreen videos from your Reel.Farm account."
 }

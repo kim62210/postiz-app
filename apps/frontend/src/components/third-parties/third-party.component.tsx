@@ -169,13 +169,13 @@ export const ThirdPartyComponent = () => {
                           'relative rounded-full flex justify-center items-center'
                         )}
                         data-tooltip-id="tooltip"
-                        data-tooltip-content={p.title}
+                        data-tooltip-content={String(t(`third_party_title_${p.identifier}`, p.title))}
                       >
                         <ImageWithFallback
                           fallbackSrc={`/icons/third-party/${p.identifier}.png`}
                           src={`/icons/third-party/${p.identifier}.png`}
                           className="rounded-full"
-                          alt={p.title}
+                          alt={String(t(`third_party_title_${p.identifier}`, p.title))}
                           width={32}
                           height={32}
                         />
@@ -187,9 +187,9 @@ export const ThirdPartyComponent = () => {
                           'flex-1 whitespace-nowrap text-ellipsis overflow-hidden group-[.sidebar]:hidden'
                         )}
                         data-tooltip-id="tooltip"
-                        data-tooltip-content={p.title}
+                        data-tooltip-content={String(t(`third_party_title_${p.identifier}`, p.title))}
                       >
-                        {p.name}
+                        {String(t(`third_party_title_${p.identifier}`, p.name))}
                       </div>
                       <ThirdPartyMenuComponent reload={mutate} tParty={p} />
                     </div>
