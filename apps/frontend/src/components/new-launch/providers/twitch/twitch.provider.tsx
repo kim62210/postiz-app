@@ -9,6 +9,7 @@ import { TwitchDto } from '@gitroom/nestjs-libraries/dtos/posts/providers-settin
 import { useSettings } from '@gitroom/frontend/components/launches/helpers/use.values';
 import { Select } from '@gitroom/react/form/select';
 import { useWatch } from 'react-hook-form';
+import { useT } from '@gitroom/react/translation/get.transation.service.client';
 
 const messageTypes = [
   {
@@ -45,6 +46,7 @@ const announcementColors = [
 ];
 
 const TwitchSettings: FC = () => {
+  const t = useT();
   const { register, control } = useSettings();
   const messageType = useWatch({
     control,
@@ -54,20 +56,20 @@ const TwitchSettings: FC = () => {
   return (
     <div className="flex flex-col">
       <Select
-        label="Message Type"
+        label={t('message_type', 'Message Type')}
         {...register('messageType', {
           value: 'message',
         })}
       >
-        {messageTypes.map((t) => (
-          <option key={t.value} value={t.value}>
-            {t.label}
+        {messageTypes.map((mt) => (
+          <option key={mt.value} value={mt.value}>
+            {mt.label}
           </option>
         ))}
       </Select>
       {messageType === 'announcement' && (
         <Select
-          label="Announcement Color"
+          label={t('announcement_color', 'Announcement Color')}
           {...register('announcementColor', {
             value: 'primary',
           })}

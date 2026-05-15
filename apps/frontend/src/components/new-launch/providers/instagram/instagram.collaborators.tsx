@@ -76,7 +76,7 @@ const InstagramCollaborators: FC<{
 
           {isTrialReel && (
             <Select
-              label="Graduation Strategy"
+              label={t('graduation_strategy', 'Graduation Strategy')}
               {...register('graduation_strategy', {
                 value: 'MANUAL',
               })}

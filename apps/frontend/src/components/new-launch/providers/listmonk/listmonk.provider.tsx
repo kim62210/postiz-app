@@ -9,13 +9,15 @@ import { Input } from '@gitroom/react/form/input';
 import { useSettings } from '@gitroom/frontend/components/launches/helpers/use.values';
 import { SelectList } from '@gitroom/frontend/components/new-launch/providers/listmonk/select.list';
 import { SelectTemplates } from '@gitroom/frontend/components/new-launch/providers/listmonk/select.templates';
+import { useT } from '@gitroom/react/translation/get.transation.service.client';
 
 const SettingsComponent = () => {
+  const t = useT();
   const form = useSettings();
 
   return (
     <>
-      <Input label="Subject" {...form.register('subject')} />
+      <Input label={t('subject', 'Subject')} {...form.register('subject')} />
       <Input label="Preview" {...form.register('preview')} />
       <SelectList {...form.register('list')} />
       <SelectTemplates {...form.register('template')} />

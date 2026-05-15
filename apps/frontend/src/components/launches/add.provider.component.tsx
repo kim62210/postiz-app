@@ -385,6 +385,7 @@ export const AddProviderComponent: FC<{
 }> = (props) => {
   const { update, social, article, onboarding, isMobile } = props;
   const { isGeneral, extensionId } = useVariables();
+  const t = useT();
   const toaster = useToaster();
   const router = useRouter();
   const fetch = useFetch();
@@ -714,7 +715,7 @@ export const AddProviderComponent: FC<{
                     'text-center'
                   )}
                 >
-                  {item.name}
+                  {t(`provider_display_${(item.identifier || '').replaceAll('-', '_')}`, item.name)}
                   {!!item.toolTip && !isMobile && (
                     <svg
                       width="15"

@@ -331,7 +331,7 @@ export const MenuComponent: FC<
           integration.disabled && 'opacity-50'
         )}
       >
-        {integration.name}
+        {t(`provider_display_${(integration.identifier || '').replaceAll('-', '_')}`, integration.name)}
       </div>
       <Menu
         canChangeProfilePicture={integration.changeProfilePicture}

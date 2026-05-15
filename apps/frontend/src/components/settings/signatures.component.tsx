@@ -210,7 +210,7 @@ const AddOrRemoveSignature: FC<{
               onChange={(e) => {
                 form.setValue('content', e.target.value);
               }}
-              placeholder="Write your signature..."
+              placeholder={t('write_your_signature', 'Write your signature...')}
               autosuggestionsConfig={{
                 textareaPurpose: `Assist me in writing social media signature`,
                 chatApiConfigs: {},

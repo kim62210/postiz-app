@@ -4,10 +4,12 @@ import { useCallback, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
 import { Logo } from '@gitroom/frontend/components/new-layout/logo';
+import { useT } from '@gitroom/react/translation/get.transation.service.client';
 
 export default function OAuthAuthorizePage() {
   const searchParams = useSearchParams();
   const fetch = useFetch();
+  const t = useT();
   const [appInfo, setAppInfo] = useState<any>(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
@@ -179,9 +181,9 @@ export default function OAuthAuthorizePage() {
               will be able to:
             </div>
             <ul className="text-[14px] list-disc list-inside space-y-[4px]">
-              <li>Access your integrations and channels</li>
-              <li>Create and schedule posts on your behalf</li>
-              <li>Read your post analytics</li>
+              <li>{t('app_scope_integrations', 'Access your integrations and channels')}</li>
+              <li>{t('app_scope_posts', 'Create and schedule posts on your behalf')}</li>
+              <li>{t('app_scope_analytics', 'Read your post analytics')}</li>
             </ul>
           </div>
 

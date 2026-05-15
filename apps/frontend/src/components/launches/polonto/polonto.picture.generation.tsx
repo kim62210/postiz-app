@@ -73,7 +73,10 @@ const GenerateTab = observer(({ store }: any) => {
         {data?.credits ? `(${data?.credits} left)` : ``}
       </div>
       <InputGroup
-        placeholder="Type your image generation prompt here..."
+        placeholder={t(
+          'type_your_image_generation_prompt_here',
+          'Type your image generation prompt here...'
+        )}
         onKeyDown={(e) => {
           if (e.key === 'Enter') {
             handleGenerate();

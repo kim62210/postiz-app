@@ -5,6 +5,7 @@ import { stripHtmlValidation } from '@gitroom/helpers/utils/strip.html.validatio
 import { textSlicer } from '@gitroom/helpers/utils/count.length';
 import { FC } from 'react';
 import { VideoOrImage } from '@gitroom/react/helpers/video.or.image';
+import { useT } from '@gitroom/react/translation/get.transation.service.client';
 
 const Icons = () => {
   return (
@@ -62,6 +63,7 @@ const Icons = () => {
 export const FacebookPreview: FC<{
   maximumCharacters?: number;
 }> = (props) => {
+  const t = useT();
   const { value: topValue, integration } = useIntegration();
   const current = useLaunchStore((state) => state.current);
   const mediaDir = useMediaDirectory();
@@ -227,7 +229,7 @@ export const FacebookPreview: FC<{
       {renderContent.length > 1 && (
         <>
           <div className="flex items-center">
-            <div className="text-[14px] font-[700]">Most relevant</div>
+            <div className="text-[14px] font-[700]">{t('most_relevant', 'Most relevant')}</div>
             <div>
               <svg
                 width="20"

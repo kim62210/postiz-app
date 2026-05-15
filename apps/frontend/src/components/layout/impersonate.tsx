@@ -532,7 +532,7 @@ export const Impersonate = () => {
                 <div className="flex-1">
                   <Input
                     autoComplete="off"
-                    placeholder="Write the user details"
+                    placeholder={t('impersonate_placeholder', 'Write the user details')}
                     name="impersonate"
                     disableForm={true}
                     label=""

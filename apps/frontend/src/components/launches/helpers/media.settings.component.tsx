@@ -7,6 +7,7 @@ import { useFetch } from '@gitroom/helpers/utils/custom.fetch';
 import { hasExtension } from '@gitroom/helpers/utils/has.extension';
 import { useLaunchStore } from '@gitroom/frontend/components/new-launch/store';
 import { useVariables } from '@gitroom/react/helpers/variable.context';
+import { useT } from '@gitroom/react/translation/get.transation.service.client';
 const postUrlEmitter = new EventEmitter();
 
 export const MediaSettingsLayout = () => {
@@ -308,6 +309,7 @@ export const MediaComponentInner: FC<{
       }
     | undefined;
 }> = (props) => {
+  const t = useT();
   const { onClose, onSelect, media } = props;
   const setActivateExitButton = useLaunchStore((e) => e.setActivateExitButton);
   const newFetch = useFetch();
@@ -372,7 +374,10 @@ export const MediaComponentInner: FC<{
           type="text"
           value={altText}
           onChange={(e) => setAltText(e.target.value)}
-          placeholder="Describe the image/video content..."
+          placeholder={t(
+            'describe_the_image_video_content',
+            'Describe the image/video content...'
+          )}
           className="w-full px-3 py-2 bg-fifth border border-tableBorder rounded-lg text-textColor placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forth focus:border-transparent"
         />
       </div>

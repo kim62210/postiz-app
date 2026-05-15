@@ -12,6 +12,7 @@ import { MediumTags } from '@gitroom/frontend/components/new-launch/providers/me
 import { MediaComponent } from '@gitroom/frontend/components/media/media.component';
 import { Select } from '@gitroom/react/form/select';
 import { YoutubePreview } from '@gitroom/frontend/components/new-launch/providers/youtube/youtube.preview';
+import { useT } from '@gitroom/react/translation/get.transation.service.client';
 const type = [
   {
     label: 'Public',
@@ -38,6 +39,7 @@ const madeForKids = [
   },
 ];
 const YoutubeSettings: FC = () => {
+  const t = useT();
   const { register, control } = useSettings();
   return (
     <div className="flex flex-col">
@@ -55,7 +57,7 @@ const YoutubeSettings: FC = () => {
         ))}
       </Select>
       <Select
-        label="Made for kids"
+        label={t('made_for_kids', 'Made for kids')}
         {...register('selfDeclaredMadeForKids', {
           value: 'no',
         })}

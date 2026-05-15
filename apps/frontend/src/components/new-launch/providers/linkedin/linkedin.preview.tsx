@@ -5,6 +5,7 @@ import { stripHtmlValidation } from '@gitroom/helpers/utils/strip.html.validatio
 import { textSlicer } from '@gitroom/helpers/utils/count.length';
 import { FC } from 'react';
 import { VideoOrImage } from '@gitroom/react/helpers/video.or.image';
+import { useT } from '@gitroom/react/translation/get.transation.service.client';
 
 const Icons = () => {
   return (
@@ -247,6 +248,7 @@ const LinkedinIconSmall = () => {
 export const LinkedinPreview: FC<{
   maximumCharacters?: number;
 }> = (props) => {
+  const t = useT();
   const { value: topValue, integration } = useIntegration();
   const current = useLaunchStore((state) => state.current);
   const mediaDir = useMediaDirectory();
@@ -406,7 +408,7 @@ export const LinkedinPreview: FC<{
               </clipPath>
             </defs>
           </svg>
-          <div>Repost</div>
+          <div>{t('repost', 'Repost')}</div>
         </div>
         <div className="flex gap-[4px] items-center">
           <svg

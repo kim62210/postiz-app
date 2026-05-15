@@ -10,6 +10,7 @@ import { useSettings } from '@gitroom/frontend/components/launches/helpers/use.v
 import { Input } from '@gitroom/react/form/input';
 import { Select } from '@gitroom/react/form/select';
 import { useWatch } from 'react-hook-form';
+import { useT } from '@gitroom/react/translation/get.transation.service.client';
 
 const topicTypes = [
   {
@@ -62,6 +63,7 @@ const callToActionTypes = [
 ];
 
 const GmbSettings: FC = () => {
+  const t = useT();
   const { register, control } = useSettings();
   const topicType = useWatch({ control, name: 'topicType' });
   const callToActionType = useWatch({ control, name: 'callToActionType' });
@@ -82,7 +84,7 @@ const GmbSettings: FC = () => {
       </Select>
 
       <Select
-        label="Call to Action"
+        label={t('call_to_action', 'Call to Action')}
         {...register('callToActionType', {
           value: 'NONE',
         })}
@@ -98,7 +100,7 @@ const GmbSettings: FC = () => {
         callToActionType !== 'NONE' &&
         callToActionType !== 'CALL' && (
           <Input
-            label="Call to Action URL"
+            label={t('call_to_action_url', 'Call to Action URL')}
             placeholder="https://example.com"
             {...register('callToActionUrl')}
           />
@@ -106,19 +108,19 @@ const GmbSettings: FC = () => {
 
       {topicType === 'EVENT' && (
         <div className="flex flex-col gap-[10px] mt-[10px] p-[15px] border border-input rounded-[8px]">
-          <div className="text-[14px] font-medium mb-[5px]">Event Details</div>
+          <div className="text-[14px] font-medium mb-[5px]">{t('event_details', 'Event Details')}</div>
           <Input
-            label="Event Title"
-            placeholder="Event name"
+            label={t('event_title', 'Event Title')}
+            placeholder={t('event_name_placeholder', 'Event name')}
             {...register('eventTitle')}
           />
           <div className="grid grid-cols-2 gap-[10px]">
             <Input
-              label="Start Date"
+              label={t('start_date', 'Start Date')}
               type="date"
               {...register('eventStartDate')}
             />
-            <Input label="End Date" type="date" {...register('eventEndDate')} />
+            <Input label={t('end_date', 'End Date')} type="date" {...register('eventEndDate')} />
           </div>
           <div className="grid grid-cols-2 gap-[10px]">
             <Input
@@ -137,7 +139,7 @@ const GmbSettings: FC = () => {
 
       {topicType === 'OFFER' && (
         <div className="flex flex-col gap-[10px] mt-[10px] p-[15px] border border-input rounded-[8px]">
-          <div className="text-[14px] font-medium mb-[5px]">Offer Details</div>
+          <div className="text-[14px] font-medium mb-[5px]">{t('offer_details', 'Offer Details')}</div>
           <Input
             label="Coupon Code (optional)"
             placeholder="SAVE20"
@@ -150,7 +152,7 @@ const GmbSettings: FC = () => {
           />
           <Input
             label="Terms & Conditions (optional)"
-            placeholder="Valid until..."
+            placeholder={t('valid_until_placeholder', 'Valid until...')}
             {...register('offerTerms')}
           />
         </div>

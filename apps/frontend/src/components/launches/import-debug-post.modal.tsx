@@ -224,10 +224,10 @@ export const ImportDebugPostModal: FC<{ close: () => void }> = ({ close }) => {
                     <img
                       src={integration.picture || '/no-picture.jpg'}
                       className="w-[24px] h-[24px] rounded-[6px]"
-                      alt={integration.name}
+                      alt={t(`provider_display_${(integration.identifier || '').replaceAll('-', '_')}`, integration.name)}
                     />
                     <div className="text-[13px] text-textColor">
-                      {integration.name}
+                      {t(`provider_display_${(integration.identifier || '').replaceAll('-', '_')}`, integration.name)}
                     </div>
                     <img
                       src={`/icons/platforms/${integration.identifier}.png`}

@@ -5,6 +5,7 @@ import { useVideo } from '@gitroom/frontend/components/videos/video.context.wrap
 import { Textarea } from '@gitroom/react/form/textarea';
 import { MultiMediaComponent } from '@gitroom/frontend/components/media/media.component';
 import { hasExtension } from '@gitroom/helpers/utils/has.extension';
+import { useT } from '@gitroom/react/translation/get.transation.service.client';
 
 export interface Voice {
   id: string;
@@ -15,6 +16,7 @@ export interface Voice {
 const VEO3Settings: FC = () => {
   const { register, watch, setValue, formState } = useFormContext();
   const { value } = useVideo();
+  const t = useT();
 
   const media = register('media', {
     value: [],
@@ -25,7 +27,7 @@ const VEO3Settings: FC = () => {
   return (
     <div>
       <Textarea
-        label="Prompt"
+        label={t('videos_prompt_label', 'Prompt')}
         name="prompt"
         {...register('prompt', {
           required: true,
