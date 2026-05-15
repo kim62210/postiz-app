@@ -111,7 +111,7 @@ const GmbSettings: FC = () => {
           <div className="text-[14px] font-medium mb-[5px]">{t('event_details', 'Event Details')}</div>
           <Input
             label={t('event_title', 'Event Title')}
-            placeholder={t('event_name_placeholder', 'Event name')}
+            placeholder={String(t('event_name_placeholder', 'Event name'))}
             {...register('eventTitle')}
           />
           <div className="grid grid-cols-2 gap-[10px]">
@@ -152,7 +152,7 @@ const GmbSettings: FC = () => {
           />
           <Input
             label="Terms & Conditions (optional)"
-            placeholder={t('valid_until_placeholder', 'Valid until...')}
+            placeholder={String(t('valid_until_placeholder', 'Valid until...'))}
             {...register('offerTerms')}
           />
         </div>

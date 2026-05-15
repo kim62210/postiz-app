@@ -176,7 +176,7 @@ export const LifetimeDeal = () => {
               <Input
                 label="Code"
                 translationKey="label_code"
-                placeholder={t('enter_your_code', 'Enter your code')}
+                placeholder={String(t('enter_your_code', 'Enter your code'))}
                 disableForm={true}
                 name="code"
                 value={code}

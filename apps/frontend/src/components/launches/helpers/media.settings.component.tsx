@@ -374,10 +374,10 @@ export const MediaComponentInner: FC<{
           type="text"
           value={altText}
           onChange={(e) => setAltText(e.target.value)}
-          placeholder={t(
+          placeholder={String(t(
             'describe_the_image_video_content',
             'Describe the image/video content...'
-          )}
+          ))}
           className="w-full px-3 py-2 bg-fifth border border-tableBorder rounded-lg text-textColor placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-forth focus:border-transparent"
         />
       </div>

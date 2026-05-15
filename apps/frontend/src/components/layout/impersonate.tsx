@@ -342,7 +342,7 @@ const AddAnnouncementModal: FC<{ close: () => void }> = ({ close }) => {
         disableForm={true}
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        placeholder={t('announcement_title_placeholder', 'Announcement title')}
+        placeholder={String(t('announcement_title_placeholder', 'Announcement title'))}
       />
       <div className="flex flex-col gap-[6px]">
         <label className="text-[14px]">
@@ -352,10 +352,10 @@ const AddAnnouncementModal: FC<{ close: () => void }> = ({ close }) => {
           className="bg-input border border-tableBorder rounded-[8px] p-[10px] text-newTextColor min-h-[120px] outline-none resize-y"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder={t(
+          placeholder={String(t(
             'announcement_description_placeholder',
             'Announcement description'
-          )}
+          ))}
         />
       </div>
       <div className="flex flex-col gap-[6px]">
@@ -532,7 +532,7 @@ export const Impersonate = () => {
                 <div className="flex-1">
                   <Input
                     autoComplete="off"
-                    placeholder={t('impersonate_placeholder', 'Write the user details')}
+                    placeholder={String(t('impersonate_placeholder', 'Write the user details'))}
                     name="impersonate"
                     disableForm={true}
                     label=""

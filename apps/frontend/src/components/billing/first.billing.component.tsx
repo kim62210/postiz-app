@@ -86,7 +86,7 @@ export const FirstBillingComponent = () => {
         <iframe
           className="h-full aspect-video min-w-[800px]"
           src="https://www.youtube.com/embed/BdsCVvEYgHU?si=vvhaZJ8I5oXXvVJS?autoplay=1"
-          title={t('postiz_tutorial', 'Postiz Tutorial')}
+          title={String(t('postiz_tutorial', 'Postiz Tutorial'))}
           allow="autoplay"
           allowFullScreen
         />

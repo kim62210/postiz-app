@@ -129,10 +129,10 @@ export const ImportDebugPostModal: FC<{ close: () => void }> = ({ close }) => {
     <div className="flex flex-col gap-[16px] min-w-[500px]">
       <textarea
         className="w-full h-[200px] p-[12px] rounded-[8px] bg-input border border-tableBorder text-textColor font-mono text-[13px] resize-y"
-        placeholder={t(
+        placeholder={String(t(
           'paste_debug_json',
           'Paste the debug JSON copied from a failed post...'
-        )}
+        ))}
         value={jsonInput}
         onChange={(e) => handleJsonChange(e.target.value)}
       />
@@ -224,7 +224,7 @@ export const ImportDebugPostModal: FC<{ close: () => void }> = ({ close }) => {
                     <img
                       src={integration.picture || '/no-picture.jpg'}
                       className="w-[24px] h-[24px] rounded-[6px]"
-                      alt={t(`provider_display_${(integration.identifier || '').replace(/-/g, '_')}`, integration.name)}
+                      alt={String(t(`provider_display_${(integration.identifier || '').replace(/-/g, '_')}`, integration.name))}
                     />
                     <div className="text-[13px] text-textColor">
                       {t(`provider_display_${(integration.identifier || '').replace(/-/g, '_')}`, integration.name)}

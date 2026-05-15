@@ -41,7 +41,7 @@ const SaveSetModal: FC<{
           value={name}
           disableForm={true}
           onChange={(e) => setName(e.target.value)}
-          placeholder={t('sets_set_name_placeholder', 'Enter a name for this set')}
+          placeholder={String(t('sets_set_name_placeholder', 'Enter a name for this set'))}
           autoFocus
         />
       </div>
